@@ -1,0 +1,5 @@
+.main__section--Posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

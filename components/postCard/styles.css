@@ -1,0 +1,21 @@
+.postCard__div {
+  width: 20rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid #ccc;
+}
+
+.postCard__title {
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.postCard__body {
+  text-align: justify;
+}
