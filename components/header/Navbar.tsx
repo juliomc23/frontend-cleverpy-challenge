@@ -26,7 +26,7 @@ const Navbar = () => {
         {navbarList.map((li) => {
           return (
             <li key={li.label} className="header__li--List">
-              <Link href={li.path} className="header__a--List">
+              <Link to={li.path} className="header__a--List">
                 {li.label}
               </Link>
             </li>

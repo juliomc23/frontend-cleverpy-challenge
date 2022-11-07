@@ -1,4 +1,5 @@
 import Header from "../components/header/Header";
+import Router from "../Router";
 import Main from "../components/main/Main";
 import Footer from "../components/footer/Footer";
 
@@ -10,7 +11,7 @@ function App() {
       </header>
 
       <main>
-        <Main />
+        <Router />
       </main>
 
       <footer>
