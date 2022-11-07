@@ -1,0 +1,25 @@
+.header__section--Logo,
+.header__section--List {
+  display: flex;
+  align-items: center;
+}
+
+.header__img--Logo {
+  width: 5rem;
+}
+
+.header__ul--List {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.header__a--List {
+  font-size: 1.2rem;
+  color: darkred;
+}
+
+.header__a--List:active {
+  color: rgb(93, 93, 139);
+}
