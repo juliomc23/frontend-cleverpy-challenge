@@ -25,10 +25,6 @@ const deletePost = async (id: number) => {
   }
 };
 
-const editPost = () => {
-  alert("editar");
-};
-
 const PostCard = ({ post }: Props) => {
   return (
     <div className="postCard__div">

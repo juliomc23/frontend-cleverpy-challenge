@@ -3,33 +3,22 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 import { Post } from "../../interfaces/Posts";
 
-export interface CounterState {
-  posts: Post[];
-}
+export type CounterState = Post[];
 
-const initialState: CounterState = {
-  posts: [],
-};
+const initialState: CounterState = [];
 
 export const counterSlice = createSlice({
   name: "post",
   initialState,
   reducers: {
     getPosts: (state, action) => {
-      state.posts.push(action.payload);
-
-      return state;
-    },
-    addPosts: (state, action) => {
-      state.posts.push(action.payload);
-
-      return state;
+      return action.payload;
     },
     // delete: (state) => {},
     // edit: (state, action: PayloadAction<number>) => {},
   },
 });
 
-export const { getPosts, addPosts } = counterSlice.actions;
+export const { getPosts } = counterSlice.actions;
 
 export default counterSlice.reducer;
