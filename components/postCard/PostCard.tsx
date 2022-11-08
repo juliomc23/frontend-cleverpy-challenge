@@ -16,7 +16,6 @@ const PostCard = ({ post }: Props) => {
   const dispatch = useDispatch();
 
   const deletePost = async (id: number) => {
-    console.log("borrar", id);
     const response = await fetch(
       `https://jsonplaceholder.typicode.com/posts/${id.toString()}`,
       {
@@ -26,7 +25,6 @@ const PostCard = ({ post }: Props) => {
 
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       dispatch(deleteRedux(id));
       toast.success("Post deleted successfully!");
       return data;

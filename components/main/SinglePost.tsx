@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
@@ -15,8 +14,6 @@ type Values = {
 };
 
 const SinglePost = () => {
-  const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
   const { id } = useParams();

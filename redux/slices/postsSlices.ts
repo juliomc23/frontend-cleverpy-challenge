@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 
 import { Post } from "../../interfaces/Posts";
-import { Router } from "react-router-dom";
 
 export type CounterState = Post[];
 
@@ -22,15 +20,11 @@ export const counterSlice = createSlice({
     },
 
     updatePost: (state, action) => {
-      state.map((posts) => console.log(posts.id));
-
       const postIdIndex = state.findIndex(
         (post) => post.id === action.payload.id
       );
-      console.log(postIdIndex);
 
       state[postIdIndex] = action.payload;
-      // console.log(postIdIndex);
     },
   },
 });
