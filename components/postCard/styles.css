@@ -19,3 +19,7 @@
 .postCard__body {
   text-align: justify;
 }
+
+.postCard__section--Buttons {
+  display: flex;
+}

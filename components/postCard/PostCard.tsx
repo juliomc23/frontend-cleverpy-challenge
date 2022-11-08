@@ -1,10 +1,19 @@
 import { Post } from "../../interfaces/Posts";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import { useDispatch } from "react-redux";
 import { deletePost as deleteRedux } from "../../redux/slices/postsSlices";
 import toast, { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import EditPostModal from "../main/EditPostModal";
+
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Slide from "@mui/material/Slide";
+import { TransitionProps } from "@mui/material/transitions";
 
 import "./styles.css";
 
@@ -36,16 +45,14 @@ const PostCard = ({ post }: Props) => {
       <h3 className="postCard__title">{post.title}</h3>
       <span className="postCard__body">{post.body}</span>
 
-      <section>
+      <section className="postCard__section--Buttons">
         <DeleteIcon
           sx={{ color: "#bf1313", cursor: "pointer" }}
           onClick={() => {
             deletePost(post.id);
           }}
         />
-        <Link to={`/posts/${post.id}`}>
-          <EditIcon sx={{ color: "#1366bf", cursor: "pointer" }} />
-        </Link>
+        <EditPostModal id={post.id} />
       </section>
 
       <Toaster />
