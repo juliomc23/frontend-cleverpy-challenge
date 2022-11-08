@@ -1,0 +1,9 @@
+.footer__div {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--cuaternary_color);
+  background-color: var(--secondary_color);
+}

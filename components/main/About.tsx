@@ -1,7 +1,8 @@
 type Props = {};
+import UnderConstruction from "./UnderConstruction";
 
 const About = (props: Props) => {
-  return <div>In build</div>;
+  return <UnderConstruction />;
 };
 
 export default About;

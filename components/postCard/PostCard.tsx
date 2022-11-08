@@ -38,13 +38,13 @@ const PostCard = ({ post }: Props) => {
 
       <section>
         <DeleteIcon
-          sx={{ color: "red" }}
+          sx={{ color: "#bf1313", cursor: "pointer" }}
           onClick={() => {
             deletePost(post.id);
           }}
         />
         <Link to={`/posts/${post.id}`}>
-          <EditIcon sx={{ color: "black" }} />
+          <EditIcon sx={{ color: "#1366bf", cursor: "pointer" }} />
         </Link>
       </section>
 

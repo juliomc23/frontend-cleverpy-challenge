@@ -16,10 +16,14 @@
 }
 
 .header__a--List {
+  display: block;
   font-size: 1.2rem;
-  color: darkred;
+  color: var(--primary_color);
+  transition: all 300ms;
+  height: 2rem;
 }
 
-.header__a--List:active {
-  color: rgb(93, 93, 139);
+.header__a--List:hover {
+  color: var(--cuaternary_color);
+  transform: translateY(-10px);
 }

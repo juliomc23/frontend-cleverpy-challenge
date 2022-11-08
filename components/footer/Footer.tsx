@@ -1,9 +1,8 @@
-import React from "react";
-
+import "./styles.css";
 type Props = {};
 
 const Footer = (props: Props) => {
-  return <div>Footer</div>;
+  return <div className="footer__div">Cleverpy - Frontend Challenge</div>;
 };
 
 export default Footer;

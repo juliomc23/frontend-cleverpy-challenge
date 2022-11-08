@@ -10,7 +10,7 @@ function App() {
         <Header />
       </header>
 
-      <main>
+      <main className="app__main--Main">
         <Router />
       </main>
 
