@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/slices/userSlice";
+import { useTranslation } from "react-i18next";
+import { tkeys } from "../../translations";
 
 export type User = {
   email: string;
@@ -19,6 +21,8 @@ const adminData = {
 };
 
 const Login = () => {
+  const { t, i18n } = useTranslation();
+
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -65,7 +69,7 @@ const Login = () => {
             className="input"
             onChange={handleChange}
           />
-          <label className="user-label">Email</label>
+          <label className="user-label">{t(tkeys.login.email)}</label>
         </div>
         <div className="input-group">
           <input
@@ -76,9 +80,9 @@ const Login = () => {
             className="input"
             onChange={handleChange}
           />
-          <label className="user-label">Password</label>
+          <label className="user-label">{t(tkeys.login.password)}</label>
         </div>
-        <button className="form__button--Login">Log In</button>
+        <button className="form__button--Login">{t(tkeys.login.login)}</button>
       </form>
       <Toaster />
     </section>

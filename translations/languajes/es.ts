@@ -1,7 +1,7 @@
 export const es = {
   login: {
     email: "Introduce tu email",
-    password: "Introduce tu password",
+    password: "Introduce tu contraseña",
     login: "Iniciar sesión",
   },
   header: {
