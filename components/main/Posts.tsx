@@ -3,11 +3,15 @@ import PostCard from "../postCard/PostCard";
 import { useSelector, useDispatch } from "react-redux";
 import { getPosts } from "../../redux/slices/postsSlices";
 import { RootState } from "../../redux/store";
+import { getUser } from "../../redux/slices/userSlice";
+
+import { Navigate } from "react-router-dom";
 
 import "./styles.css";
 
 const Posts = () => {
   const getPostsState = useSelector((state: RootState) => state.posts);
+  const getUserState = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
   const fetchPosts = async () => {
@@ -25,8 +29,13 @@ const Posts = () => {
   };
 
   useEffect(() => {
+    dispatch(getUser);
     fetchPosts();
   }, []);
+
+  if (getUserState.email === "" && getUserState.password === "") {
+    return <Navigate to="/login" replace />;
+  }
 
   return (
     <section className="main__section--Posts">

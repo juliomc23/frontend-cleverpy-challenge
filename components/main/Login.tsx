@@ -3,7 +3,10 @@ import toast, { Toaster } from "react-hot-toast";
 
 import { useNavigate } from "react-router-dom";
 
-type User = {
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/slices/userSlice";
+
+export type User = {
   email: string;
   password: string;
 };
@@ -16,6 +19,8 @@ const adminData = {
 };
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const [userData, setUserData] = useState<User>({
@@ -43,7 +48,7 @@ const Login = () => {
       userData.email === adminData.email &&
       userData.password === adminData.password
     ) {
-      toast.success("Here we are!");
+      dispatch(setUser(userData));
       navigate("/posts");
     }
   };
