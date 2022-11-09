@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-
 import { useTranslation } from "react-i18next";
 import { tkeys } from "../../translations";
 import { useSelector, useDispatch } from "react-redux";
 import { delUser, getUser } from "../../redux/slices/userSlice";
 import { RootState } from "../../redux/store";
-
 import "./styles.css";
 
 const Navbar = () => {
@@ -34,8 +31,6 @@ const Navbar = () => {
   };
 
   const emptyUser = getUserState.email === "" && getUserState.password === "";
-
-  // console.log(user);
 
   return (
     <section className="header__section--List">

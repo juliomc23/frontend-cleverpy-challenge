@@ -1,11 +1,10 @@
-import React from "react";
-
 import { Routes, Route } from "react-router-dom";
 import Main from "./components/main/Main";
 import About from "./components/main/About";
 import Posts from "./components/main/Posts";
 import Login from "./components/main/Login";
 
+//This function is in charge of controlling the routes in the project.
 function Router() {
   return (
     <Routes>

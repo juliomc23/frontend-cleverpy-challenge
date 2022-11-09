@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap");
 
+/* Global colors used in the project */
 :root {
   --primary_color: #00abb3;
   --secondary_color: #3c4048;

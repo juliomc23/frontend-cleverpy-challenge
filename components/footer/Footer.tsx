@@ -1,7 +1,6 @@
 import "./styles.css";
-type Props = {};
 
-const Footer = (props: Props) => {
+const Footer = () => {
   return <div className="footer__div">Cleverpy - Frontend Challenge</div>;
 };
 

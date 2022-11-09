@@ -1,8 +1,8 @@
 import Header from "../components/header/Header";
 import Router from "../Router";
 import Footer from "../components/footer/Footer";
-
 import "./root.css";
+
 function App() {
   return (
     <div className="App">
