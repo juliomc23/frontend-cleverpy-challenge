@@ -23,3 +23,10 @@
 .postCard__section--Buttons {
   display: flex;
 }
+
+@media only screen and (max-width: 414px) {
+  .postCard__div {
+    width: 19rem;
+    height: 19rem;
+  }
+}

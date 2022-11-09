@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import Main from "./components/main/Main";
 import About from "./components/main/About";
 import Posts from "./components/main/Posts";
-import SinglePost from "./components/main/SinglePost";
 import Login from "./components/main/Login";
 
 function Router() {
@@ -13,7 +12,6 @@ function Router() {
       <Route path="/" element={<Main />} />
       <Route path="/about" element={<About />} />
       <Route path="/posts" element={<Posts />} />
-      <Route path="/posts/:id" element={<SinglePost />} />
       <Route path="/login" element={<Login />} />
 
       <Route path="*" element={<div>404 Not Found</div>} />

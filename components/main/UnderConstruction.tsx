@@ -1,10 +1,12 @@
 import "./styles.css";
 
-type Props = {};
+import { useTranslation } from "react-i18next";
+import { tkeys } from "../../translations";
 
-const phrasalArray = "COMING SOON...!";
+const UnderConstruction = () => {
+  const { t, i18n } = useTranslation();
 
-const UnderConstruction = (props: Props) => {
+  const phrasalArray = `${t(tkeys.in_building)}`;
   return (
     <section className="main__section--underConstruction waviy">
       {phrasalArray.split("").map((word, index) => (

@@ -12,11 +12,14 @@ import EditIcon from "@mui/icons-material/Edit";
 import { useDispatch } from "react-redux";
 import { updatePost } from "../../redux/slices/postsSlices";
 
-import { useParams } from "react-router-dom";
-
 import { Post } from "../../interfaces/Posts";
 
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+
+import { useTranslation } from "react-i18next";
+import { tkeys } from "../../translations";
+
+import "./styles.css";
 
 type Values = {
   title?: string;
@@ -37,6 +40,7 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export default function EditPostModal({ id }: Props) {
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -120,23 +124,47 @@ export default function EditPostModal({ id }: Props) {
         keepMounted
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
+        disableScrollLock //así evitamos que se haga un padding en el body
       >
-        <DialogTitle>{"Edit the post"}</DialogTitle>
+        <DialogTitle>{t(tkeys.modal_post.info)}</DialogTitle>
         <DialogContent>
-          <form onSubmit={(e) => editPost(id, e)}>
+          <form
+            onSubmit={(e) => editPost(id, e)}
+            className="modal__form--editPost"
+          >
+            <label className="form__label--text">
+              {t(tkeys.modal_post.title)}
+            </label>
             <input
               name="title"
               type="text"
               defaultValue={singlePost?.title}
+              className="form__input--editTitlePost"
               onChange={handleChange}
             />
+            <label className="form__label--text">
+              {t(tkeys.modal_post.description)}
+            </label>
             <textarea
               name="body"
               defaultValue={singlePost?.body}
+              className="form__textarea--editBodyPost"
               onChange={handleChange}
             />
 
-            <button onClick={handleClose}>SAVE</button>
+            <button className="noselect" onClick={handleClose}>
+              <span className="text">{t(tkeys.modal_post.save)}</span>
+              <span className="icon">
+                <svg viewBox="0 0 18 15" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6 10.7 1.8 6.5.4 7.9 6 13.5l12-12L16.6.1 6 10.7Z"
+                    fill="#ffffff"
+                    fillRule="evenodd"
+                    className="fill-000000 fill-39ab35"
+                  ></path>
+                </svg>
+              </span>
+            </button>
           </form>
         </DialogContent>
       </Dialog>

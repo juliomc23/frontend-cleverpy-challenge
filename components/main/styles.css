@@ -97,7 +97,7 @@
 }
 
 .main__h1--underConstruction {
-  font-size: 5rem;
+  font-size: 11vw;
   font-family: "Nabla", cursive;
 }
 
@@ -121,5 +121,118 @@
   }
   20% {
     transform: translateY(-20px);
+  }
+}
+
+/* Modal edit post styles */
+
+.modal__form--editPost {
+  /* border: 1px solid red; */
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label--text {
+  border-bottom: 1px solid #ccc;
+}
+
+.form__input--editTitlePost {
+  height: 2rem;
+  color: black;
+  font-weight: bold;
+  border-radius: 0.3rem;
+  border: 1px solid var(--secondary_color);
+  padding-left: 0.3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+.form__textarea--editBodyPost {
+  height: 10rem;
+  color: black;
+  font-weight: bold;
+  border: 1px solid var(--secondary_color);
+  padding-left: 0.3rem;
+  padding-top: 0.3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+.noselect {
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: #247e1c;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #247e1c;
+}
+
+.noselect,
+.noselect span {
+  transition: 200ms;
+}
+
+.noselect .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+}
+
+.noselect .icon {
+  position: absolute;
+  border-left: 1px solid #25d11521;
+  transform: translateX(110px);
+  height: 20px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noselect svg {
+  width: 15px;
+  fill: #eee;
+}
+
+.noselect:hover {
+  background: #247e1c;
+}
+
+.noselect:hover .text {
+  color: transparent;
+}
+
+.noselect:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+}
+
+.noselect:focus {
+  outline: none;
+}
+
+.noselect:active .icon svg {
+  transform: scale(0.8);
+}
+
+@media only screen and (max-width: 414px) {
+  .modal__form--editPost {
+    width: 16rem;
+  }
+
+  .form__input--editTitlePost {
+    font-size: 1.1rem;
+  }
+
+  .form__textarea--editBodyPost {
+    font-size: 1.1rem;
   }
 }
