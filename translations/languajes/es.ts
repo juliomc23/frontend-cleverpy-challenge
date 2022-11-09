@@ -17,5 +17,5 @@ export const es = {
     save: "Guardar",
   },
   in_building: "PRÓXIMAMENTE... !",
-  change_language: "Inglés",
+  change_language: "en",
 };

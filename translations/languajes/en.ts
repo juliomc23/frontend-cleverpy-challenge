@@ -17,5 +17,5 @@ export const en = {
     save: "Save",
   },
   in_building: "COMING SOON... !",
-  change_language: "Spanish",
+  change_language: "es",
 };
